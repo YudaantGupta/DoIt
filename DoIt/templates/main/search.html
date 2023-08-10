@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %} new_entry {% endblock %}
+{% block style %} 
+<style>
+    .search{
+        background-color: white;
+        border-radius: 10px;
+        color: gray;
+        font-size: 30px;
+        padding: 10px;
+        width: 500px;
+        position: relative;
+        margin-left: 25%;
+        margin-top: 10%;
+        
+    }
+</style>
+
+{% endblock %}
+
+{% block content %} 
+
+{% if user.is_authenticated %}
+<form action="" method="get">
+    <input class = "search" type="text" name="query" id="query" value="Search" required>
+    <input type="submit" value= "Search">
+</form>
+
+<div>
+    {% for i in results %}
+    <div>
+        <a href="/accounts/profile/{{i.username}}">{{i.username}} ({{i.first_name}} {{i.last_name}})</a>
+    </div>
+    {% endfor %}
+</div>
+
+{% else %} 
+You need to <a href="/accounts/login">login</a> to search users!
+
+{% endif %}
+{% endblock %}

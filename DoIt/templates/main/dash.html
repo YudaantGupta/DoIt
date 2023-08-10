@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %} Dashboard {% endblock %}
+{% block style %} 
+<style>  
+    
+
+.wrapper:hover{
+    color: white;
+    border: 2px solid white;
+}
+
+.wrapper{
+    padding: 50px;
+    display: block;
+    float: left;
+    border: 2px solid grey;
+    height: 175px;
+    margin: 30px;
+    border-radius: 10px;
+    width: 15%;
+    overflow: hidden;
+    color: grey;
+    text-decoration: none;
+    
+}
+
+
+    
+    
+</style>
+{% endblock %}
+
+
+{% block content %} 
+
+
+
+    <div class="container">
+
+        <h1>GROUPING</h1> 
+
+        <div class="list">
+
+        {% for i in user.groupings.all %}
+            <a href="/grouping/{{i.id}}"><div class="wrapper">
+                <div class="groupingtitle">{{i.title}}<br></div>
+
+                {% for j in i.entries.all|slice:"0:3" %}
+                    {{j.title}}
+                {% endfor %}
+
+                
+    
+            </div></a>
+        
+        {% endfor %}
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} public {% endblock %}
+
+{% block content %}
+    {% if u %}
+    <h2>
+        {{u.username}}
+    </h2>
+    <strong>{{u.first_name}} {{u.last_name}}</strong>
+    <h2>{{profile.about}}</h2>
+    <h2>{{profile.created}}</h2>
+    <h2>{{profile.bday}}</h2>
+
+    <img src="/media/{{profile.dp}}" alt="" height="300" width="300">
+
+    {% for grouping in public%}
+
+    {% for entry in grouping%}
+    <div>
+        {{entry.title}}<br> -> {{entry.content}}
+    </div>
+
+    {% endfor %}
+
+    {% endfor %}
+    
+
+    {% else %}
+    <div>User does not exist</div>
+    {% endif %}
+{% endblock %}

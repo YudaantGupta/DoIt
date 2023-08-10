@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Exo 2", sans-serif;
+}
+body {
+  background-color: #080710 ;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  color: #fff;
+}
+
+.unlist {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  margin-top: 40%;
+  font-size: larger;
+  
+}
+
+.list1 a {
+  display: block;
+  text-decoration: none;
+  margin-top: 10px;
+  color: grey;
+  width: 100%;
+  padding: 20px 0 30px 30px;
+}
+
+/* Change the link color on hover */
+.list1 a:hover {
+  color: white;
+}
+
+.nav{
+  width: 13%;
+  height: 100%;
+  float: left;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  z-index: 2;
+
+}
+
+.content{
+  width: 82%;
+  height: 94%;
+  float: right;
+  padding: 50px;
+  border: 3px solid white;
+  border-radius: 20px;
+  margin: 30px;
+  overflow-y: scroll;
+  
+}
+
+.list2{
+  padding-top: 180%;
+}
+

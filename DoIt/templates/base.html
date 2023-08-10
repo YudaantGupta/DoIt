@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/media/css/base.css">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+{% block style %}{% endblock %}
+
+<body>
+    {% comment %} <div class="navbar">
+        <ul>
+            <li style="background-color:#2DA8D8FF"><a class="active" href="/dash">Dash</a></li>
+            <li>
+                {% if user.is_authenticated %}
+                <a href="/accounts/profile">{{user.username}}</a>
+                {% else %}
+                <a href="/accounts/login">Accounts</a>
+                {% endif %}
+            </li>
+            <li><a href="/statistics">Statistics</a></li>
+          </ul>
+    </div> {% endcomment %}
+
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <div class="nav"> 
+            <ul class = "unlist">
+                <li class="list1"><a href="/">Dash</a></li>
+                <li class="list1"><a href="/search">Search</a></li>
+                <li class="list1"><a href="/grouping/new/">+Grouping</a></li>
+                <li class="list1"><a href="/entry/new/">+Entry</a></li>
+                <li class="list1 list2"><a href="/accounts/profile">Account</a></li>
+                
+            </ul>
+    </div>
+
+    <div class="content">
+    {% block content %}
+    
+    {% endblock %}
+    </div>
+    
+</body>
+</html>

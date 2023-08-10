@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} new_entry {% endblock %}
+{% block style %} 
+{% endblock %}
+
+{% block content %} 
+    <h1>ENTRY</h1>
+    {{entry.title}} <br>
+    <img src="/media/{{entry.image}}" alt=""> <br>
+    {{entry.content}} <br>
+    {{entry.grouping.title}} <br>
+    {{entry.created}} <br>
+    {{entry.public}} <br>
+
+    <a href="/entry/edit/{{entry.id}}/">edit</a>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} Dashboard {% endblock %}
+{% block style %} 
+{% endblock %}
+
+
+{% block content %} 
+
+    <h2 class = "dash">{{grouping.title}}</h2>
+
+    
+
+    <form action="/grouping/delete" method = "get">
+        <input type="hidden" name="g_id" value="{{grouping.id}}">
+        <input type="submit" value="delete">
+    </form>
+
+    <ul>
+        {% for i in grouping.entries.all %}
+        <li><a href="/entry/{{i.id}}">{{i.title}}</a></li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}

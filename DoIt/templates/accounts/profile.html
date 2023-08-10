@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} Profile {% endblock %}
+
+{% block content %} 
+    <p>Profile page</p>
+
+    <img src="/media/{{profile.dp}}" alt="">
+
+    <form method="post">
+        {% csrf_token %}
+        {{profile_form.as_p}}
+        <input type="text" name="first" value="{{user.first_name}}">
+        <input type="text" name="last" value="{{user.last_name}}">
+        <input type="submit" value="Submit">
+    </form>
+
+    <a href="/accounts/logout">
+        <button>Logout</button>
+    </a>
+    
+    
+{% endblock %}
